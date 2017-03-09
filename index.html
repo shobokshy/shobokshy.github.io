@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Shobokshy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="Shobokshy">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src="https://use.fontawesome.com/c5c0a9b0aa.js"></script>
+
+  <style>
+    * {
+        font-family: 'Lato', sans-serif;
+        color: rgba(0,0,0,0.87);
+    }
+    h1 {
+        font-weight: 900;
+    }
+    h2 {
+        font-weight: 300;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .centered {
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw; 
+        height: 100vh;
+
+        background-image: url(pattern.png)
+    }
+
+    .icon {
+        font-size: 3em;
+    }
+
+    .list {
+        text-align: center;
+        
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    .list li {
+        display: inline;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    a:hover .fa{
+        color: rgb(12, 230, 123);
+        transition: color .20s ease;
+        -moz-transition: color .20s ease;
+        -webkit-transition: color .20s ease;
+    }
+
+</style>
+</head>
+
+
+
+<body>
+    <div class="wrapper">
+        <div>
+            <img 
+                src="square wave.svg"
+                class="centered"
+                style="width: 20rem;"
+            >
+            <h1 style="text-align: center">Shobokshy</h1>
+            <h2 style="text-align: center">Web Developer / Music Producer</h2>
+            <ul class="list">
+                <li>
+                    <a href="https://play.spotify.com/artist/6uOLHynml0akUadw1tXnUf" target="_blank"><i class="icon fa fa-spotify" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="https://soundcloud.com/shobokshy" target="_blank"><i class="icon fa fa-soundcloud" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/shobokshy" target="_blank"><i class="icon fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/shobokshy" target="_blank"><i class="icon fa fa-linkedin" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
