@@ -1,0 +1,65 @@
+* {
+
+    color: rgba(0,0,0,0.87);
+}
+
+.inverted p, .inverted h3, .inverted li {
+    color: white !important;
+}
+
+.inverted h1 {
+    color: rgb(12, 230, 123) !important;
+}
+
+.dark {
+    background-color: rgba(0,0,0,0.87);
+}
+
+#intro {
+    background-image: url('pattern.png')
+}
+
+.icon {
+    font-size: 3em;
+}
+
+.list {
+    text-align: center;
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.list li {
+    display: inline;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+a:hover .fa{
+    color: rgb(12, 230, 123);
+    transition: color .20s ease;
+    -moz-transition: color .20s ease;
+    -webkit-transition: color .20s ease;
+}
+
+
+
+#chevron-open {
+    animation: MoveUpDown 2s linear infinite;
+    position: relative;
+}
+  
+@keyframes MoveUpDown {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 1.5rem;
+    }
+    100% {
+        bottom: 0;
+    }
+}
