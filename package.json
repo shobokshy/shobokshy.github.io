@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/shobokshy/shobokshy.github.io#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.7",
     "@zeit/next-typescript": "^1.1.1",
     "next": "^8.0.3",
     "react": "^16.8.3",
