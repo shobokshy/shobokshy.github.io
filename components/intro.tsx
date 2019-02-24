@@ -4,6 +4,8 @@ import SocialList from './social-list';
 
 const Intro: React.FunctionComponent = () => (
     <div css={{
+        position: 'absolute',
+        bottom: '15%',
         padding: '15% 10%'
     }}>
         <h1 css={{
@@ -25,6 +27,7 @@ const Intro: React.FunctionComponent = () => (
         </p>
         <SocialList />
         <Button>Say Hey!</Button>
+        <Button type='secondary' css={{marginLeft: '10px'}}>Resume</Button>
     </div>
 )
 

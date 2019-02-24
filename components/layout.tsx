@@ -38,6 +38,10 @@ const Layout: React.FunctionComponent = props => (
 					margin: 0,
 					padding: 0
 				},
+				'button:focus': {
+					outline: 'none'
+				},
+
 				'h1': {
 					fontSize: '40px',
 					letterSpacing: '-0.022em',
