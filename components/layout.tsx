@@ -33,9 +33,16 @@ const Layout: React.FunctionComponent = props => (
 					fontFamily: 'Inter, sans-serif'
 				},
 				'body': {
+					color: '#333',
 					boxSizing: 'border-box',
 					margin: 0,
 					padding: 0
+				},
+				'h1': {
+					fontSize: '40px',
+					letterSpacing: '-0.022em',
+					lineHeight: '56px',
+					fontWeight: 800
 				}
 			}}
 		/>

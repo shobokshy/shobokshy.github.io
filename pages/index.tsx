@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Layout, { Column } from '../components/layout';
 import Intro from '../components/intro';
 
@@ -7,12 +6,7 @@ const Index = () => (
 		<Column css={{
 			position: 'sticky'
 		}}>
-      		<Intro>
-				<Link href="/resume">
-				<a>Resume Page</a>
-				</Link>
-				<p>Hello Next.js</p>
-      		</Intro>
+      		<Intro/>
     	</Column>
   	</Layout>
 )
