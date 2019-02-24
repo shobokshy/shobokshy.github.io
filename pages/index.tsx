@@ -1,13 +1,15 @@
 import Layout, { Column } from '../components/layout';
 import Intro from '../components/intro';
+import Projects from '../components/projects';
 
 const Index = () => (
 	<Layout>
+		<Intro/>
 		<Column css={{
-			position: 'sticky'
+			gridColumnStart: 2
 		}}>
-      		<Intro/>
-    	</Column>
+			<Projects/>
+		</Column>
   	</Layout>
 )
   

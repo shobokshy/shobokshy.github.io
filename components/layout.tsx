@@ -11,6 +11,8 @@ interface ColumnProps {
 export const Column: React.FunctionComponent<ColumnProps> = props => (
 	<div css={{
 		display: 'flex',
+		width: '100%',
+		flexWrap: 'wrap',
 		...props.css
 	}}>
     	{props.children}
