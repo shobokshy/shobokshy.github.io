@@ -1,12 +1,14 @@
 /** @jsx jsx */ import { jsx } from '@emotion/core'
 import Button from './button';
+import SocialList from './social-list';
 
-const Intro: React.FunctionComponent = props => (
+const Intro: React.FunctionComponent = () => (
     <div css={{
         padding: '15% 10%'
     }}>
         <h1 css={{
-            color: '#4a4a4a'
+            color: '#4a4a4a',
+            textTransform: 'uppercase'
         }}>
             Developer,
             <br/>
@@ -21,6 +23,7 @@ const Intro: React.FunctionComponent = props => (
         }}>
             Aliquam sit amet justo ligula. In dignissim ante ac justo pharetra, hendrerit rutrum nisl scelerisque. Cras at urna pellentesque, maximus tellus eu, iaculis urna. Aliquam tincidunt odio nec nisl maximus interdum ut in nisl.
         </p>
+        <SocialList />
         <Button>Say Hey!</Button>
     </div>
 )

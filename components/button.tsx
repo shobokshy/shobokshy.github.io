@@ -5,6 +5,7 @@ const Button: React.FunctionComponent = props => (
         fontSize: '14px',
         color: 'white',
         background: '#0076ff',
+        transition: 'all .2s ease-in',
         boxShadow: '0 4px 14px 0 rgba(0,118,255,0.39)',
         padding: '0 2rem',
         height: '2.5rem',
