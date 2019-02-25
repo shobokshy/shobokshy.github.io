@@ -15,17 +15,17 @@ const Button: React.FunctionComponent<Props> = props => {
             {...props}
             css={{
                 fontSize: '14px',
-                color: `${type === 'primary' ? 'white' : '#2f54eb'}`,
-                background: `${type === 'primary' ? '#2f54eb' : 'transparent'}`,
+                color: `${type === 'primary' ? 'white' : '#6772e5'}`,
+                background: `${type === 'primary' ? '#6772e5' : 'transparent'}`,
                 transition: 'all .2s ease-in',
-                boxShadow: `0 4px 14px 0 ${type === 'primary' ? '#597ef773' : 'transparent'}`,
+                boxShadow: `0 4px 14px 0 ${type === 'primary' ? '#00000014' : 'transparent'}`,
                 padding: '0 2rem',
                 height: '2.5rem',
                 borderWidth: 0,
                 borderRadius: '7px',
                 cursor: 'pointer',
                 '&:hover': {
-                    background: `${type === 'primary' ? '#597ef7' : '#d8eaffe6'}`
+                    background: `${type === 'primary' ? '#7795f8' : '#6772e51a'}`
                 }
         }}>
             {props.children}
