@@ -35,6 +35,9 @@ const Layout: React.FunctionComponent = props => (
 					fontFamily: 'Inter, sans-serif'
 				},
 				'body': {
+					fontSize: '14px',
+					letterSpacing: '-0.006em',
+					lineHeight: '20px',
 					color: '#333',
 					boxSizing: 'border-box',
 					margin: 0,
