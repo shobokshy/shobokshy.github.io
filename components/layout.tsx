@@ -45,9 +45,9 @@ const Layout: React.FunctionComponent = props => (
 				},
 
 				'h1': {
-					fontSize: '40px',
-					letterSpacing: '-0.022em',
-					lineHeight: '56px',
+					fontSize: '30px',
+					letterSpacing: '-0.021em',
+					lineHeight: '42px',
 					fontWeight: 800
 				}
 			}}

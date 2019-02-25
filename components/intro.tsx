@@ -27,7 +27,8 @@ const Intro: React.FunctionComponent = () => (
             <p css={{
                 fontSize: '16px',
                 letterSpacing: '-0.011em',
-                lineHeight: '22px'
+                lineHeight: '22px',
+                fontWeight: 300
             }}>
                 Aliquam sit amet justo ligula. In dignissim ante ac justo pharetra, hendrerit rutrum nisl scelerisque. Cras at urna pellentesque, maximus tellus eu, iaculis urna. Aliquam tincidunt odio nec nisl maximus interdum ut in nisl.
             </p>
