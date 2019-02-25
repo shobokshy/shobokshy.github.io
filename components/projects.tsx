@@ -1,12 +1,40 @@
 import React from "react";
 import Project from "./project";
+import Prismic from 'prismic-javascript';
+import { Document } from "prismic-javascript/d.ts/documents";
 
-const Projects: React.FunctionComponent = () => (
-    <React.Fragment>
-        <Project backgroundColor='#00898A'/>
-        <Project backgroundColor='#0081E8'/>
-        <Project backgroundColor='#FF967B'/>
-    </React.Fragment>
-)
+interface Props {
+
+}
+
+interface State {
+    docs: Document[]
+}
+
+class Projects extends React.Component<Props, State> {
+    constructor(props: Props) {
+        super(props)
+        this.state = {
+            docs: []
+        }
+    }
+
+    async componentDidMount() {
+        const cmsEndpoint = 'https://shobokshy.cdn.prismic.io/api/v2';
+        const api = await Prismic.api(cmsEndpoint);
+        const response = await api.query(Prismic.Predicates.at('document.type', 'project'), {});
+        if(response) this.setState({docs: response.results})
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                {this.state.docs.map(doc => (
+                    <Project key={doc.id} doc={doc} backgroundColor='#00898A'/>
+                ))}
+            </React.Fragment>
+        )
+    }
+}
 
 export default Projects
