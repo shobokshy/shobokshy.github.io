@@ -25,7 +25,10 @@ const Layout: React.FunctionComponent = props => (
 		<div css={{
 			display: 'grid',
 			gridTemplateColumns: '40vw auto',
-			height: '100vh'
+			height: '100vh',
+			'@media (max-device-width : 768px)': {
+				gridTemplateColumns: '0 auto',
+			}
 		}}>
 			{props.children}
 		</div>
