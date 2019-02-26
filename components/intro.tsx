@@ -30,7 +30,7 @@ const Intro: React.FunctionComponent = () => (
                 lineHeight: '22px',
                 fontWeight: 300
             }}>
-                Aliquam sit amet justo ligula. In dignissim ante ac justo pharetra, hendrerit rutrum nisl scelerisque. Cras at urna pellentesque, maximus tellus eu, iaculis urna. Aliquam tincidunt odio nec nisl maximus interdum ut in nisl.
+                Hi, I'm <b css={{fontWeight: 500}}>Ahmed Elshobokshi</b> a developer living in Queensland, Australia, who loves building & designing full stack apps.
             </p>
             <SocialList />
             <Button>Say Hey!</Button>
