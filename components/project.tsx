@@ -47,10 +47,15 @@ class Project extends React.Component<Props, State> {
                         display: 'flex',
                         flexDirection: 'column',
                         height: '100%',
+                        width: '100%',
                         boxSizing: 'border-box'
                     }}
                 >
                     <div css={{fontWeight: 100, color: 'white'}}>{this.formatDate(this.state.data.created_date)}</div>
+
+                    <div css={{marginTop: 'auto', textAlign: 'center'}}>
+                        <img css={{maxWidth: '90%'}} src={this.state.data.feature_image.url} alt={this.state.data.feature_image.alt} />
+                    </div>
 
                     <div css={{
                         marginTop: 'auto',
