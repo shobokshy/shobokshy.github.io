@@ -14,37 +14,39 @@ const SocialList: React.FunctionComponent = () => (
                 },
                 '& > li:first-child': {
                     paddingLeft: 0
+                },
+                '& .icon': {
+                    stroke: '#676767'
                 }
             }}
         >
             <li>
                 <a target='_blank' href='https://github.com/shobokshy'>
-                    <GitHub size={30} color='#333' className="icon social-github" />
+                    <GitHub size={30} className="icon social-github" />
                 </a>
             </li>
             <li>
                 <a target='_blank' href='https://www.linkedin.com/in/shobokshy/'>
-                    <Linkedin size={30} color='#333' className="icon social-linkedin" />
+                    <Linkedin size={30} className="icon social-linkedin" />
                 </a>
             </li>
             <li>
                 <a target='_blank' href='https://www.instagram.com/shobokshy/'>
-                    <Instagram size={30} color='#333' className="icon social-instagram" />
+                    <Instagram size={30} className="icon social-instagram" />
                 </a>
             </li>
             <li>
                 <a target='_blank' href='https://soundcloud.com/shobokshy'>
-                    <Music size={30} color='#333' className="icon social-music" />
+                    <Music size={30} className="icon social-music" />
                 </a>
             </li>
         </ul>
         <Global
             styles={{
-                '.icon': {transition: 'all .2s ease-in'},
-                '.social-github:hover': {stroke: '#6e5494'},
-                '.social-linkedin:hover': {stroke: '#0077b5'},
-                '.social-instagram:hover': {stroke: '#e1306c'},
-                '.social-music:hover': {stroke: '#1db954'}
+                '.social-github:hover': {stroke: '#6e5494 !important'},
+                '.social-linkedin:hover': {stroke: '#0077b5 !important'},
+                '.social-instagram:hover': {stroke: '#e1306c !important'},
+                '.social-music:hover': {stroke: '#1db954 !important'}
             }}
         />
     </React.Fragment>

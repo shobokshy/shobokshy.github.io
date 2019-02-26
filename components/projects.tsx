@@ -22,7 +22,7 @@ class Projects extends React.Component<Props, State> {
     async componentDidMount() {
         const cmsEndpoint = 'https://shobokshy.cdn.prismic.io/api/v2';
         const api = await Prismic.api(cmsEndpoint);
-        const response = await api.query(Prismic.Predicates.at('document.type', 'project'), {});
+        const response = await api.query(Prismic.Predicates.at('document.type', 'project'), { orderings: '[my.project.created_date desc]' });
         if(response) this.setState({docs: response.results})
     }
 
