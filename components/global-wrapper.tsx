@@ -36,7 +36,7 @@ const GlobalWrapper: React.FunctionComponent = props => (
 					stroke: 'black'
 				},
 				'a': {
-					color: '#6772e5',
+					color: '#e64c4c',
 					textDecoration: 'none'
 				},
 				'ul': {

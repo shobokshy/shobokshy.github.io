@@ -6,8 +6,8 @@ import GlobalWrapper from '../components/global-wrapper';
 
 const Index = () => (
 	<GlobalWrapper>
+		<Intro/>
 		<Layout>
-			<Intro/>
 			<Column
 				gridColumnStart={2}
 				width='100%'
