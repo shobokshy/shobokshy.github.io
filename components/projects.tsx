@@ -30,7 +30,7 @@ class Projects extends React.Component<Props, State> {
         return (
             <React.Fragment>
                 {this.state.docs.map(doc => (
-                    <Project key={doc.id} doc={doc} backgroundColor='#00898A'/>
+                    <Project key={doc.id} doc={doc} />
                 ))}
             </React.Fragment>
         )

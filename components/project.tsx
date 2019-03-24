@@ -7,7 +7,6 @@ import React from 'react';
 
 interface Props {
     doc: Document
-    backgroundColor?: string
 }
 
 interface State {
@@ -38,7 +37,7 @@ class Project extends React.Component<Props, State> {
                     display: 'block',
                     height: '98vh',
                     width: '100%',
-                    backgroundColor: this.state.data.background_color
+                    backgroundImage: `linear-gradient(-156deg, ${this.state.data.background_gradient_color_1} 19%, ${this.state.data.background_gradient_color_2} 100%) !important`
                 }}
             >
                 <div 

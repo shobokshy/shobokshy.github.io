@@ -22,7 +22,7 @@ const GlobalWrapper: React.FunctionComponent = props => (
 					padding: 0
 				},
 				'::selection': {
-					background: '#6772e5',
+					background: '#e64c4c',
 					color: 'white'
 				},
 				'button:focus': {
