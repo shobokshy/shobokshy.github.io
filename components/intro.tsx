@@ -1,4 +1,5 @@
 /** @jsx jsx */ import { jsx } from '@emotion/core'
+import Link from 'next/link';
 import Button from './button';
 import SocialList from './social-list';
 
@@ -10,7 +11,7 @@ const Intro: React.FunctionComponent = () => (
         width: '40vw',
         height: '100vh',
         '@media (max-device-width : 768px)': {
-            position: 'absolute',
+            position: 'relative',
             height: '98vh',
             width: '100vw',
         }
@@ -52,8 +53,12 @@ const Intro: React.FunctionComponent = () => (
                     Hi, I'm <b css={{fontWeight: 500}}>Ahmed Elshobokshi</b> a developer living in Queensland, Australia, who loves building & designing full stack apps.
                 </p>
                 <SocialList />
-                <Button>Say Hey!</Button>
-                <Button type='secondary' css={{marginLeft: '10px'}}>Resume</Button>
+                <a target='_blank' href='mailto: a.shobokshy@gmail.com'>
+                    <Button>Say Hey!</Button>
+                </a>
+                <Link href='/resume'>  
+                    <Button type='secondary' css={{marginLeft: '10px'}}>Resume</Button>
+                </Link>
             </div>
 
         </div>
