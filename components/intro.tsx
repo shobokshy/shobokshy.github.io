@@ -5,7 +5,8 @@ import SocialList from './social-list';
 const Intro: React.FunctionComponent = () => (
     <div css={{
         position: 'fixed',
-        backgroundColor: 'white',
+        backgroundColor: '#151617',
+        color: '#a3a3a3',
         width: '40vw',
         height: '100vh',
         '@media (max-device-width : 768px)': {
@@ -26,8 +27,15 @@ const Intro: React.FunctionComponent = () => (
         >
             <div>
                 <h1 css={{
-                    color: '#4a4a4a',
-                    textTransform: 'uppercase'
+                    //color: '#d50000',
+                    background: 'linear-gradient(90deg, #e64c4c 0%, #ef32fb 100%)',
+                    '-webkit-background-clip': 'text',
+                    WebkitTextFillColor: 'transparent',
+                    textTransform: 'uppercase',
+                    fontSize: '40px',
+                    letterSpacing: 'unset',
+                    fontWeight: 400,
+                    fontFamily: 'Permanent Marker'
                 }}>
                     Developer,
                     <br/>

@@ -6,6 +6,7 @@ export default class MyDocument extends Document {
         return (
             <html lang="en">
                 <Head>
+                    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />
