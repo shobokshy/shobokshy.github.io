@@ -50,7 +50,7 @@ const Intro: React.FunctionComponent = () => (
                     lineHeight: '22px',
                     fontWeight: 300
                 }}>
-                    Hi, I'm <b css={{fontWeight: 500}}>Ahmed Elshobokshi</b> a developer living in Queensland, Australia, who loves building & designing full stack apps.
+                    Hi, I'm <b css={{fontWeight: 500}}>Ahmed Elshobokshi</b> a developer living in Queensland, Australia, who loves building & designing full stack web apps.
                 </p>
                 <SocialList />
                 <a target='_blank' href='mailto: a.shobokshy@gmail.com'>
