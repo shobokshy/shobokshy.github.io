@@ -1,40 +1,54 @@
-import React from "react";
-import Project from "./project";
-import Prismic from 'prismic-javascript';
-import { Document } from "prismic-javascript/d.ts/documents";
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import React from 'react';
+import { Content } from './Content';
+import { Divider } from './Divider';
+import { List } from './List';
+import { Link } from './Link';
+import { GithubIcon } from './icons/Github';
+import { Document } from 'prismic-javascript/d.ts/documents';
+import { RichText } from 'prismic-reactjs';
 
-interface Props {
-
+interface ProjectsProps {
+	projects: Document[];
 }
 
-interface State {
-    docs: Document[]
-}
-
-class Projects extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props)
-        this.state = {
-            docs: []
-        }
-    }
-
-    async componentDidMount() {
-        const cmsEndpoint = 'https://shobokshy.cdn.prismic.io/api/v2';
-        const api = await Prismic.api(cmsEndpoint);
-        const response = await api.query(Prismic.Predicates.at('document.type', 'project'), { orderings: '[my.project.created_date desc]' });
-        if(response) this.setState({docs: response.results})
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                {this.state.docs.map(doc => (
-                    <Project key={doc.id} doc={doc} />
-                ))}
-            </React.Fragment>
-        )
-    }
-}
-
-export default Projects
+export const Projects: React.FC<ProjectsProps> = (props) => {
+	console.log(props);
+	return (
+		<Content>
+			<Divider short />
+			<h3
+				id='projects'
+				css={{
+					scrollMarginTop: 140,
+					marginTop: 0,
+					marginBottom: '2.5rem',
+				}}
+			>
+				PROJECTS
+			</h3>
+			<List direction='vertical' spaceSize='xLarge'>
+				{props.projects.map((project) => (
+					<List.Item key={project.id}>
+						<List.Content
+							title={RichText.asText(project.data.title)}
+							actions={[
+								project.data.github_link.target && (
+									<Link
+										href={project.data.github_link.url}
+										icon={<GithubIcon />}
+									>
+										View Source
+									</Link>
+								),
+							]}
+						>
+							{RichText.asText(project.data.subtitle)}
+						</List.Content>
+					</List.Item>
+				))}
+			</List>
+		</Content>
+	);
+};

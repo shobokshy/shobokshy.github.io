@@ -1,60 +1,82 @@
-/** @jsx jsx */ import { jsx } from '@emotion/core'
-import React from "react";
-import Prismic from 'prismic-javascript';
-import { Document } from "prismic-javascript/d.ts/documents";
-import Track from "./track";
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import React from 'react';
+import { Content } from './Content';
+import { Divider } from './Divider';
+import { List } from './List';
+import { Link } from './Link';
+import { Document } from 'prismic-javascript/d.ts/documents';
+import { RichText } from 'prismic-reactjs';
+import { SpotifyIcon } from './icons/Spotify';
+import { SoundCloudIcon } from './icons/SoundCloud';
 
-interface Props {
-
+interface TrackProps {
+	tracks: Document[];
 }
 
-interface State {
-    docs: Document[]
-}
+export const Tracks: React.FC<TrackProps> = (props) => {
+	const formatDate = (date: string) => {
+		const d = new Date(date);
+		return Intl.DateTimeFormat('en-AU', {
+			year: 'numeric',
+			month: 'short',
+			day: '2-digit',
+		}).format(d);
+	};
 
-class Tracks extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props)
-        this.state = {
-            docs: []
-        }
-    }
+	console.log(props.tracks);
 
-    async componentDidMount() {
-        const cmsEndpoint = 'https://shobokshy.cdn.prismic.io/api/v2';
-        const api = await Prismic.api(cmsEndpoint);
-        const response = await api.query(Prismic.Predicates.at('document.type', 'track'), { orderings: '[my.track.created_date desc]' });
-        if(response) this.setState({docs: response.results})
-    }
-
-    render() {
-        return (
-            <div
-                css={{
-                    display: 'block',
-                    width: '100%',
-                    backgroundColor: '#f5f9fc'
-                }}
-            >
-                <div 
-                    css={{
-                        padding: 65,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                        boxSizing: 'border-box'
-                    }}
-                >
-                    <h2>Music</h2>
-                    <ul>
-                        {this.state.docs.map(doc => (
-                            <Track key={doc.id} doc={doc}/>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        )
-    }
-}
-
-export default Tracks
+	return (
+		<Content>
+			<Divider short />
+			<h3
+				id='music'
+				css={{
+					scrollMarginTop: 140,
+					marginTop: 0,
+					marginBottom: '2.5rem',
+				}}
+			>
+				MUSIC
+			</h3>
+			<List direction='vertical' spaceSize='large'>
+				{props.tracks.map((track) => (
+					<List.Item key={track.id}>
+						<List.Content
+							title={RichText.asText(track.data.name)}
+							subtitle={formatDate(track.data.created_date)}
+							actions={[
+								track.data.spotify.url && (
+									<Link
+										href={track.data.spotify.url}
+										target={track.data.spotify.target}
+										icon={<SpotifyIcon />}
+									>
+										Spotify
+									</Link>
+								),
+								track.data.soundcloud.url && (
+									<Link
+										href={track.data.soundcloud.url}
+										target={track.data.spotify.target}
+										icon={<SoundCloudIcon />}
+									>
+										SoundCloud
+									</Link>
+								),
+								track.data.url.url && (
+									<Link
+										href={track.data.url.url}
+										target={track.data.spotify.target}
+									>
+										Other Platforms
+									</Link>
+								),
+							]}
+						/>
+					</List.Item>
+				))}
+			</List>
+		</Content>
+	);
+};

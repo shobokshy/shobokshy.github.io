@@ -1,36 +1,71 @@
-/** @jsx jsx */ import { jsx } from '@emotion/core'
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import React from 'react';
 
-type Type = 'primary' | 'secondary'
-
-interface Props {
-    css?: object
-    type?: Type
+interface ButtonProps
+	extends React.DetailedHTMLProps<
+		React.ButtonHTMLAttributes<HTMLButtonElement>,
+		HTMLButtonElement
+	> {
+	shadow?: boolean;
+	size?: 'small' | 'default';
 }
 
-const Button: React.FunctionComponent<Props> = props => {
-    const type = props.type || 'primary';
-    
-    return (
-        <button
-            {...props}
-            css={{
-                fontSize: '14px',
-                color: `${type === 'primary' ? 'white' : '#e64c4c'}`,
-                background: `${type === 'primary' ? '#e64c4c' : 'transparent'}`,
-                transition: 'all .2s ease-in',
-                boxShadow: `0 4px 14px 0 ${type === 'primary' ? '#00000014' : 'transparent'}`,
-                padding: '0 2rem',
-                height: '2.5rem',
-                borderWidth: 0,
-                borderRadius: '7px',
-                cursor: 'pointer',
-                '&:hover': {
-                    background: `${type === 'primary' ? '#c4001d' : '#ff616f4d'}`
-                }
-        }}>
-            {props.children}
-        </button>
-    )
-}
+export const Button: React.FC<ButtonProps> = ({
+	shadow,
+	size,
+	children,
+	...buttonProps
+}) => {
+	const buttonSizeStyle = () => {
+		const defaultStyle = {
+			width: 'auto',
+			padding: '8px 12px',
+		};
 
-export default Button;
+		switch (size) {
+			case 'small':
+				return {
+					width: 'initial',
+					padding: '8px 12px',
+				};
+			case 'default':
+				return defaultStyle;
+			default:
+				return defaultStyle;
+		}
+	};
+
+	return (
+		<button
+			{...buttonProps}
+			css={{
+				boxSizing: 'border-box',
+				display: 'inline-box',
+				userSelect: 'none',
+				outline: 'none',
+				textTransform: 'capitalize',
+				justifyContent: 'center',
+				textAlign: 'center',
+				whiteSpace: 'nowrap',
+				transition: 'all 0.2s ease',
+				position: 'relative',
+				overflow: 'hidden',
+				color: '#fff',
+				backgroundColor: 'transparent',
+				border: '1px solid #eaeaea',
+				cursor: 'pointer',
+				fontSize: '.8rem',
+				boxShadow: shadow ? '0 5px 10px rgba(0, 0, 0, 0.12)' : 'none',
+				...buttonSizeStyle(),
+				':hover': {
+					borderColor: 'black',
+					backgroundColor: '#fff',
+					color: '#000',
+				},
+			}}
+		>
+			{children}
+		</button>
+	);
+};

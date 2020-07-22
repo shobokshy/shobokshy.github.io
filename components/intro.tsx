@@ -1,68 +1,83 @@
-/** @jsx jsx */ import { jsx } from '@emotion/core'
-import Link from 'next/link';
-import Button from './button';
-import SocialList from './social-list';
+/** @jsx jsx */
+import { jsx, keyframes } from '@emotion/core';
+import React from 'react';
+import { Content } from './Content';
+import { StaticBackground } from './StaticBackground';
+import { Brand } from './Brand';
 
-const Intro: React.FunctionComponent = () => (
-    <div css={{
-        position: 'fixed',
-        backgroundColor: '#151617',
-        color: '#a3a3a3',
-        width: '40vw',
-        height: '100vh',
-        '@media (max-device-width : 768px)': {
-            position: 'relative',
-            height: '98vh',
-            width: '100vw',
-        }
-    }}>
-        <div 
-            css={{
-                padding: 65,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                height: '100%',
-                boxSizing: 'border-box'
-            }}
-        >
-            <div>
-                <h1 css={{
-                    //color: '#d50000',
-                    background: 'linear-gradient(90deg, #e64c4c 0%, #ef32fb 100%)',
-                    '-webkit-background-clip': 'text',
-                    WebkitTextFillColor: 'transparent',
-                    textTransform: 'uppercase',
-                    fontSize: '40px',
-                    letterSpacing: 'unset',
-                    fontWeight: 400,
-                    fontFamily: 'Permanent Marker'
-                }}>
-                    Developer,
-                    <br/>
-                    Thinker
-                    <br/>
-                    & Musician.
-                </h1>
-                <p css={{
-                    fontSize: '16px',
-                    letterSpacing: '-0.011em',
-                    lineHeight: '22px',
-                    fontWeight: 300
-                }}>
-                    Hi, I'm <b css={{fontWeight: 500}}>Ahmed Elshobokshi</b> a developer living in Queensland, Australia, who loves building & designing full stack web apps.
-                </p>
-                <SocialList />
-                <a target='_blank' href='mailto: a.shobokshy@gmail.com'>
-                    <Button>Say Hey!</Button>
-                </a>
-                <Link href='/resume'>  
-                    <Button type='secondary' css={{marginLeft: '10px'}}>Resume</Button>
-                </Link>
-            </div>
+interface IntroProps {}
 
-        </div>
-    </div>
-)
+export const Intro: React.FC<IntroProps> = () => {
+	const shadowAnimation = keyframes`
+		from {
+			text-shadow: 0 0 8px #4645a3;
+		}
+		to {
+			text-shadow: 0 0 20px #4645a3;
+		}
+	`;
 
-export default Intro;
+	const dash = keyframes`
+		to {
+			stroke-dashoffset: 0;
+		}
+	`;
+
+	const fill = keyframes`
+		from{
+			fill: #4645a3;
+			fill-opacity: 0;
+		}
+		to {
+			fill: #4645a3;
+			fill-opacity: 1;
+		}
+	`;
+
+	return (
+		<Content>
+			<div
+				css={{
+					width: '100%',
+					height: '100%',
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					textAlign: 'center',
+				}}
+			>
+				<p css={{ margin: 0 }}>Hi, I'm</p>
+				<Brand />
+				{/* <h1
+					css={{
+						margin: 0,
+						color: '#4645a3',
+						animation: `${shadowAnimation} 3s ease-in-out infinite alternate`,
+						//textShadow: '0 0 200px #4645a3',
+						background:
+							'radial-gradient(at 60% bottom, #706fdc,#4645a3)',
+						backgroundClip: 'text',
+						WebkitBackgroundClip: 'text',
+						WebkitTextFillColor: 'transparent',
+						fontFamily: 'SerifGothicStd-Black',
+						fontSize: '7.451rem',
+						letterSpacing: -5,
+						userSelect: 'none',
+					}}
+				>
+					SHOBOKSHY
+				</h1> */}
+				<h2
+					css={{
+						margin: 0,
+						marginTop: -20,
+						fontWeight: 100,
+					}}
+				>
+					A web developer & musician in Brisbane, Australia.
+				</h2>
+			</div>
+			<StaticBackground />
+		</Content>
+	);
+};
