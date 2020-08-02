@@ -2,7 +2,6 @@
 import { Global, jsx } from '@emotion/core';
 import React from 'react';
 import FontFaceObserver from 'fontfaceobserver';
-import '../fonts/Fonts.module.css';
 
 interface FontsProps {}
 
@@ -12,7 +11,9 @@ export const Fonts: React.FC<FontsProps> = (props) => {
 	React.useEffect(() => {
 		const serifGothicStd = new FontFaceObserver('SerifGothicStd-Black');
 
-		Promise.all([serifGothicStd.load()]).then(() => setFontsLoaded(true));
+		Promise.all([serifGothicStd.load(null, 5000)]).then(() =>
+			setFontsLoaded(true)
+		);
 	}, []);
 
 	return (
@@ -20,7 +21,6 @@ export const Fonts: React.FC<FontsProps> = (props) => {
 			<Global
 				styles={{
 					html: {
-						fontFamily: 'Inter',
 						fontSize: '100%',
 						lineHeight: 1.6,
 						fontWeight: 300,
