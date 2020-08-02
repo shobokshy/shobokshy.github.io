@@ -1,7 +1,3 @@
-import 'flexboxgrid/dist/flexboxgrid.css';
-import '../public/style.css';
-// import App from 'next/app'
-
 function MyApp({ Component, pageProps }: any) {
 	return <Component {...pageProps} />;
 }

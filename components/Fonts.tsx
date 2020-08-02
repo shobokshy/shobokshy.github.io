@@ -10,12 +10,9 @@ export const Fonts: React.FC<FontsProps> = (props) => {
 	const [fontsLoaded, setFontsLoaded] = React.useState<boolean>(false);
 
 	React.useEffect(() => {
-		const inter = new FontFaceObserver('Inter');
 		const serifGothicStd = new FontFaceObserver('SerifGothicStd-Black');
 
-		Promise.all([inter.load(), serifGothicStd.load()]).then(() =>
-			setFontsLoaded(true)
-		);
+		Promise.all([serifGothicStd.load()]).then(() => setFontsLoaded(true));
 	}, []);
 
 	return (

@@ -4,7 +4,7 @@ import React from 'react';
 
 interface BrandProps {}
 
-export const Brand: React.FC<BrandProps> = (props) => {
+export const Brand: React.FC<BrandProps> = () => {
 	const primaryColor = '#4645a3';
 
 	const shadow = keyframes`
@@ -34,23 +34,17 @@ export const Brand: React.FC<BrandProps> = (props) => {
 		}
     `;
 
-	// background: #E6CB3E;
-	// background: -webkit-radial-gradient(bottom right, #E6CB3E, #821893);
-	// background: -moz-radial-gradient(bottom right, #E6CB3E, #821893);
-	// background: radial-gradient(to top left, #E6CB3E, #821893);
-
 	const style: InterpolationWithTheme<any> = {
 		margin: 0,
-		color: primaryColor,
 		background: `-webkit-radial-gradient(bottom right, #b2b1ff, ${primaryColor})`,
 		backgroundClip: 'text',
 		WebkitBackgroundClip: 'text',
 		WebkitTextFillColor: 'transparent',
 		fontFamily: 'SerifGothicStd-Black',
-		fontSize: '7.451rem',
-		letterSpacing: -5,
+		fontSize: 'inherit',
 		lineHeight: 1.3,
 		userSelect: 'none',
+		padding: '0px 10px',
 	};
 
 	return (
@@ -59,13 +53,15 @@ export const Brand: React.FC<BrandProps> = (props) => {
 				display: 'grid',
 				alignItems: 'center',
 				justifyContent: 'center',
+				fontSize: 'calc(3rem + 6vw)',
 			}}
 		>
 			<h1
 				css={{
 					...style,
 					gridArea: '1/1',
-					animation: `${shadow} 3s ease-in-out infinite alternate, ${fill} 5s cubic-bezier(1,0,.44,.91) forwards`,
+					animation: `${shadow} 3s ease-in-out infinite alternate, ${fill} 7s cubic-bezier(1,0,.44,.91) forwards`,
+					letterSpacing: '-6px',
 				}}
 			>
 				SHOBOKSHY
@@ -73,19 +69,22 @@ export const Brand: React.FC<BrandProps> = (props) => {
 			<svg
 				stroke={primaryColor}
 				strokeWidth='2'
-				css={{ width: '700px', gridArea: '1/1' }}
+				height='100%'
+				width='100%'
+				css={{ gridArea: '1/1' }}
 			>
 				<text
 					fill='none'
 					x='50%'
 					y='50%'
-					dx='2px'
+					dx='3'
 					dominantBaseline='central'
 					textAnchor='middle'
+					letterSpacing='-6px'
 					css={{
 						...style,
-						strokeDasharray: 500,
-						strokeDashoffset: 500,
+						strokeDasharray: 600,
+						strokeDashoffset: 600,
 						animation: `${dash} 15s linear forwards`,
 					}}
 				>

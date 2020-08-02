@@ -9,7 +9,6 @@ export const Content: React.FC<ContentProps> = (props) => {
 		<div
 			css={{
 				height: '100%',
-				width: 700,
 			}}
 		>
 			{props.children}

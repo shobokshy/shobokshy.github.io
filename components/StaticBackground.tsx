@@ -29,7 +29,7 @@ export const StaticBackground: React.FC<StaticBackgroundProps> = (props) => {
 				backgroundImage: `url(/noise.png)`,
 				backgroundRepeat: 'repeat',
 				animation: `${grain} 10s steps(10) infinite`,
-				zIndex: 2,
+				zIndex: 0,
 				pointerEvents: 'none',
 				opacity: 0.9,
 			}}
