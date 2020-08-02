@@ -4,7 +4,7 @@ import React from 'react';
 
 interface StaticBackgroundProps {}
 
-export const StaticBackground: React.FC<StaticBackgroundProps> = (props) => {
+export const StaticBackground: React.FC<StaticBackgroundProps> = () => {
 	const grain = keyframes`
         0%, 100% { transform:translate(0, 0) }
         10% { transform:translate(-5%, -10%) }
